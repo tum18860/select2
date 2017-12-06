@@ -15,6 +15,25 @@
 
 {% import "_includes/forms" as forms %}
 
+{% set fieldOptions = {
+    id: id,
+    class: 'select2 js-select2',
+    name: name,
+    options: options
+} %}
+
+{% if settings['multiple']|length %}
+	{% set fieldOptions = fieldOptions|merge({ values: value}) %}
+	{{ forms.multiSelectField(fieldOptions) }}
+{% else %}
+	{# Select - Single #}
+	{% set fieldOptions = fieldOptions|merge({ value: value}) %}
+	{{ forms.selectField(fieldOptions) }}
+{% endif %}
+
+{#
+{% import "_includes/forms" as forms %}
+
 {{ forms.textField({
         label: 'Some Field',
         instructions: 'Enter some text here.',
@@ -22,3 +41,4 @@
         name: name,
         value: value})
 }}
+#}
