@@ -9,13 +9,6 @@
  */
 
 /**
- * Select2 en Translation
- *
- * Returns an array with the string to be translated (as passed to `Craft::t('select2', '...')`) as
- * the key, and the translation as the value.
- *
- * http://www.yiiframework.com/doc-2.0/guide-tutorial-i18n.html
- *
  * @author    Jason Mayo
  * @package   Select2
  * @since     2.0.0
